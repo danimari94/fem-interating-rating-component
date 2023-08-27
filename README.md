@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://github.com/danimari94/fem-interating-rating-component/blob/master/Screenshot.png?raw=true)
 
 ### Links
 
