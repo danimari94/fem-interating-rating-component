@@ -1,0 +1,185 @@
+:root {
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --ff-primary: 'Overpass', sans-serif;
+
+  --clr-accent-400: hsl(25, 97%, 53%);
+  --clr-accent-200: hsl(25, 50%, 53%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(217, 12%, 63%);
+  --clr-neutral-400: hsl(210, 19%, 18%);
+  --clr-neutral-600: hsl(215, 22%, 15%);
+  --clr-neutral-800: hsl(228, 11%, 9%);
+
+  --fs-primary: .9375rem;
+  --fs-heading: 1.7rem;
+
+  --circle-size: 3rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  font: inherit;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+html,
+body{
+  height:100%;
+  font-family: var(--ff-primary);
+}
+
+body{
+  background-color: var(--clr-neutral-800);
+  display:grid;
+  place-items:center;
+}
+
+.title{
+  font-size: var(--fs-heading);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  margin-top: 2.3rem;
+}
+.subtitle{
+  color: var(--clr-neutral-200);
+  margin-top: .8rem;
+  line-height: 1.5;
+}
+
+.main {
+  display:grid;
+  place-items: center;
+}
+
+.container {
+  position:absolute;
+  background-color: var(--clr-neutral-600);
+  padding: 2rem;
+  margin-inline: 1rem;
+  display:flex;
+  flex-direction: column;
+  border-radius: 2em;
+  max-width: 26rem;
+
+  transition: transform 250ms ease-in-out;
+}
+
+.star-icon {
+  border-radius: 50%;
+  background-color: var(--clr-neutral-400);
+  align-self: start;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  display:grid;
+  place-items: center;
+}
+
+.rating-buttons {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+}
+
+.rating-button {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-200);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  border:none;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  display:grid;
+  place-items: center;
+  transition: all 150ms ease-in-out;
+}
+
+.rating-button:hover,
+.rating-button:focus-visible {
+  background-color:var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+}
+
+.rating-button[data-checked="true"]{
+  background-color: var(--clr-neutral-200);
+  color: var(--clr-neutral-100);
+}
+
+
+.button {
+  padding: 1em 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  border:none;
+  border-radius: 2em;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 150ms ease-in-out;
+}
+
+.button:hover,
+.button:focus-visible{
+  color: var(--clr-accent-400);
+  background-color: var(--clr-neutral-100);
+}
+
+.thank-you-container {
+  align-items: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.selection-result {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-accent-200);
+  padding: .5em 1em;
+  border-radius: 100vmax;
+  font-weight: var(--fw-regular);
+  margin-top: 2rem;
+  font-size: var(--fs-primary);
+}
+
+.hidden {
+  transform: scale(0);
+}
